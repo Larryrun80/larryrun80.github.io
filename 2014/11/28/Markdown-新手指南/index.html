@@ -5,15 +5,31 @@
   
   <title>Markdown 新手指南 | Larry&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I'm writing here all things.">
+  <meta name="description" content="Markdown为我们提供了一种非常简单的格式语法，这种语法提供了很好的可读性，并且根据这种语法书写的文本能够被自动转换为HTML格式被发布到互联网的Web服务器，被浏览器解析为丰富的呈现形式。
+段落
+如果在书写过程中，文本之间存在一个或多个空行，就会被认为是一个段落。
+标题
+用一个或多个#代表标题，#的数量决定了标题文字的大小：
+1234# 这是最大的标题（对应HTML的&lt;h1&gt;）#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown 新手指南">
 <meta property="og:url" content="http://larryguo.com/2014/11/28/Markdown-新手指南/">
 <meta property="og:site_name" content="Larry's Blog">
-<meta property="og:description" content="I'm writing here all things.">
+<meta property="og:description" content="Markdown为我们提供了一种非常简单的格式语法，这种语法提供了很好的可读性，并且根据这种语法书写的文本能够被自动转换为HTML格式被发布到互联网的Web服务器，被浏览器解析为丰富的呈现形式。
+段落
+如果在书写过程中，文本之间存在一个或多个空行，就会被认为是一个段落。
+标题
+用一个或多个#代表标题，#的数量决定了标题文字的大小：
+1234# 这是最大的标题（对应HTML的&lt;h1&gt;）#">
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/7566585?v=3&s=460">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown 新手指南">
-<meta name="twitter:description" content="I'm writing here all things.">
+<meta name="twitter:description" content="Markdown为我们提供了一种非常简单的格式语法，这种语法提供了很好的可读性，并且根据这种语法书写的文本能够被自动转换为HTML格式被发布到互联网的Web服务器，被浏览器解析为丰富的呈现形式。
+段落
+如果在书写过程中，文本之间存在一个或多个空行，就会被认为是一个段落。
+标题
+用一个或多个#代表标题，#的数量决定了标题文字的大小：
+1234# 这是最大的标题（对应HTML的&lt;h1&gt;）#">
 
   
     <link rel="alternative" href="/atom.xml" title="Larry&#39;s Blog" type="application/atom+xml">
@@ -71,6 +87,10 @@
   <time datetime="2014-11-28T06:48:21.000Z" itemprop="datePublished">Nov 28 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -87,13 +107,115 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Markdown为我们提供了一种非常简单的格式语法，这种语法提供了很好的可读性，并且根据这种语法书写的文本能够被自动转换为HTML格式被发布到互联网的Web服务器，被浏览器解析为丰富的呈现形式。</p>
+<h2 id="段落">段落</h2>
+<p>如果在书写过程中，文本之间存在一个或多个空行，就会被认为是一个段落。</p>
+<h2 id="标题">标题</h2>
+<p>用一个或多个<code>#</code>代表标题，<code>#</code>的数量决定了标题文字的大小：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 这是最大的标题（对应HTML的&lt;h1&gt;）</span></div><div class="line"><span class="comment">## 这个第二大（对应HTML的&lt;h2&gt;）</span></div><div class="line"><span class="keyword">...</span></div><div class="line"><span class="comment">###### 这是最小的标题 （对应&lt;h6&gt;）</span></div></pre></td></tr></table></figure>
+
+<h2 id="引用">引用</h2>
+<p>用<code>&gt;</code>代表一个引用：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">Larry 曾经说过：</span></span></div><div class="line">&gt; <span class="constant">Markdown</span> 很简单易学</div></pre></td></tr></table></figure>
+
+<p>Larry 曾经说过：</p>
+<blockquote>
+<p>Markdown 很简单易学</p>
+</blockquote>
+<h2 id="风格文本">风格文本</h2>
+<p>你可以用 <code>*</code> 包围文字，使他们呈现为粗体或斜体：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">*</span>这是斜体<span class="keyword">*</span></div><div class="line"><span class="keyword">*</span><span class="keyword">*</span> 这是粗体 <span class="keyword">*</span><span class="keyword">*</span></div></pre></td></tr></table></figure>
+
+<p><em>这是斜体</em><br><strong> 这是粗体 </strong></p>
+<p>你也可以用<code>*</code>或<code>_</code>嵌套显示粗体和斜体，如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">*</span><span class="keyword">*</span>他们说粗体里可以嵌套 _斜体_ ，所以我来试试。<span class="keyword">*</span><span class="keyword">*</span></div></pre></td></tr></table></figure>
+
+<p><strong>他们说粗体里可以嵌套 <em>斜体</em> ，所以我来试试。</strong></p>
+<h2 id="列表">列表</h2>
+<p>你可以用<code>*</code> 或 <code>-</code> 来创建无序列表：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby"> 冰激凌</span></div><div class="line">-<span class="ruby"> 西瓜汁</span></div><div class="line">-<span class="ruby"> 甜甜圈</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li>冰激凌</li>
+<li>西瓜汁</li>
+<li>甜甜圈</li>
+</ul>
+<p>如果你要创建有序列表，用数字就可以：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>闹钟响了</div><div class="line"><span class="bullet">2. </span>按掉闹钟</div><div class="line"><span class="bullet">3. </span>继续睡觉</div></pre></td></tr></table></figure>
+
+<ol>
+<li>闹钟响了</li>
+<li>按掉闹钟</li>
+<li>继续睡觉</li>
+</ol>
+<p>你可以使用两个空格的缩进来嵌套列表：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>起床</div><div class="line">  1. 坐起来</div><div class="line">  2. 打哈欠</div><div class="line"><span class="bullet">2. </span>穿衣服</div><div class="line">  * 穿衣服</div><div class="line">  * 穿裤子</div><div class="line">  * 穿袜子</div><div class="line"><span class="bullet">3. </span>吃早饭</div></pre></td></tr></table></figure>
+
+<ol>
+<li>起床<ol>
+<li>坐起来</li>
+<li>打哈欠</li>
+</ol>
+</li>
+<li>穿衣服<ul>
+<li>穿衣服</li>
+<li>穿裤子</li>
+<li>穿袜子</li>
+</ul>
+</li>
+<li>吃早饭</li>
+</ol>
+<h2 id="代码引用：">代码引用：</h2>
+<p>用一个 <code>` </code> （左上角，数字1旁边那个，不是单引号）包围文字在行内做代码引用</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">我有一个<span class="escape">`伟</span>大<span class="escape">`的</span>梦想</div></pre></td></tr></table></figure>
+
+<p>我有一个<code>伟大</code>的梦想</p>
+<p>如果是多行代码引用，你需要用三个 ` 来包围文字。</p>
+<h2 id="超链接">超链接</h2>
+<p>用<code>[]()</code>来创建超链接，显示的文字写在[]中，跳转链接放在()中</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">他们说[<span class="link_label">Larry的博客</span>](<span class="link_url">http://larryguo.com</span>)超赞的</div></pre></td></tr></table></figure>
+
+<p>他们说<a href="http://larryguo.com" target="_blank" rel="external">Larry的博客</a>超赞的</p>
+<h2 id="插入图片">插入图片</h2>
+<p>用 <code>![]()</code> 插入图片，这个和超链的语法很像，只是在前面加个！</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="link_label">Larry的头像</span>](<span class="link_url">https://avatars3.githubusercontent.com/u/7566585?v=3&s=460</span>)</div></pre></td></tr></table></figure>
+
+<p><img src="https://avatars3.githubusercontent.com/u/7566585?v=3&amp;s=460" alt="Larry的头像"></p>
+<h2 id="表格">表格</h2>
+<p>直接上代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">| <span class="class">This</span>   <span class="localvars">| is     |</span> <span class="class">Table</span>  |</div><div class="line">|--------|--------|--------|</div><div class="line"><span class="localvars">| hello  | world  |</span> !      |</div><div class="line">| <span class="class">I</span>      <span class="localvars">| am     |</span> <span class="class">Larry</span>  |</div></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>This</th>
+<th>is</th>
+<th>Table</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hello</td>
+<td>world</td>
+<td>!</td>
+</tr>
+<tr>
+<td>I</td>
+<td>am</td>
+<td>Larry</td>
+</tr>
+</tbody>
+</table>
+<p>如果你觉得这些语法不够用，可以参考 <a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="external">Mastering Markdown</a><br>另外，你在Markdown文件中直接书写HTML，也是可以识别的。</p>
+
       
     </div>
     <footer class="article-footer">
       <a data-url="http://larryguo.com/2014/11/28/Markdown-新手指南/" data-id="o7f9uem1egid9gs7" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+
     </footer>
   </div>
   
@@ -119,7 +241,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -128,7 +250,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -137,7 +259,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Blog/" style="font-size: NaNpx;">Blog</a><a href="/tags/Github/" style="font-size: NaNpx;">Github</a><a href="/tags/Hexo/" style="font-size: NaNpx;">Hexo</a>
+      <a href="/tags/Blog/" style="font-size: 20.00px;">Blog</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a>
     </div>
   </div>
 
