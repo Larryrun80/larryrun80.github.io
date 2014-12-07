@@ -1,10 +1,10 @@
 
-  <!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html lang="zh-CN, en">
 <head>
   <meta charset="UTF-8">
   
-    <title>Archives: 2014 | Larry&#39;s Blog</title>
+    <title>Category: undefined | Larry&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Larry Guo">
@@ -15,7 +15,7 @@
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="https://twitter.com/Larryguo80" />
-    <meta name="twitter:title" content="Archives: 2014 | Larry&#39;s Blog" />
+    <meta name="twitter:title" content="Category: undefined | Larry&#39;s Blog" />
       
     
     
@@ -66,89 +66,21 @@
 
       </header>
       <div id="container">
-        
-
+          
 <div class="archive-title" >
-  <h2 class="archive-icon">2014</h2>
-  
-  <div class="archiveslist archive-float clearfix">
-   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li></ul>
- </div>
-  
+<h2 class="category-icon">Categories</h2>
+
+<a data-src="/categories/Hexo/" href="#Hexo" title="Hexo">Hexo<sup>0</sup></a>
+
+<a data-src="/categories/技术/" href="#技术" title="技术">技术<sup>3</sup></a>
+
 </div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2014/12/04/Hexo-on-Github-2-插件/" title="Hexo on Github(2): 插件和主题" itemprop="url">
-  
-    <h1 itemprop="name">Hexo on Github(2): 插件和主题</h1>
-    
-    <time datetime="2014-12-04T15:02:10.000Z" itemprop="datePublished">Dec 4 2014</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2014/11/28/Markdown-新手指南/" title="Markdown 新手指南" itemprop="url">
-  
-    <h1 itemprop="name">Markdown 新手指南</h1>
-    
-    <time datetime="2014-11-28T06:48:21.000Z" itemprop="datePublished">Nov 28 2014</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2014/11/27/Hexo-on-Github-1-创建和发布你的Github-Blog/" title="Hexo on Github(1): 创建和发布你的Github Blog" itemprop="url">
-  
-    <h1 itemprop="name">Hexo on Github(1): 创建和发布你的Github Blog</h1>
-    
-    <time datetime="2014-11-27T09:49:11.000Z" itemprop="datePublished">Nov 27 2014</time>
-  </a>
-</section>
-
-
-  </div>
+<div id="main" class="archive-part">
+<div class="all-list-box"></div>
 </div>
+
 
       </div>
-      <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello, I&#39;m Larry Guo <br/>
-			This is my blog,believe it or not.</p>
-	</section>
-	 
-	<div class="social-font clearfix">
-		
-		<a href="http://weibo.com/http://weibo.com/larry80" target="_blank" title="weibo"></a>
-		
-		
-		<a href="https://twitter.com/https://twitter.com/Larryguo80" target="_blank" title="twitter"></a>
-		
-		
-		<a href="https://github.com/https://github.com/Larryrun80" target="_blank" title="github"></a>
-		
-		
-		<a href="https://www.facebook.com/https://www.facebook.com/larry.guo.98" target="_blank" title="facebook"></a>
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
-		
-		<a href="http://larryguo.com" target="_blank" title="Larry Guo">Larry Guo</a>
-		
-		</p>
-</div>
-</footer>
       <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
@@ -197,6 +129,24 @@ $(document).ready(function(){
 
 
 
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var list    = $('.archive-title a'),
+      box     = $('.all-list-box'),
+      first   = $('.archive-title a:first-of-type');
+      box.load(first.attr('data-src').toString()+' #archive-page');
+      first.addClass('current');
+  list.each(function(){
+    $(this).click(function(){
+      var listSrc=$(this).attr('data-src').toString()+' #archive-page';
+      box.load(listSrc);
+      list.removeClass('current');
+      $(this).addClass('current');
+     });  
+    });
+  }); 
+</script>
 
 
 
