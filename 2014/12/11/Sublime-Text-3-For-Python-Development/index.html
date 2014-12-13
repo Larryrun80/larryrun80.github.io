@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>用Sublime Text打造你的Python IDE | Larry&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="先简单说下Sublime Text的优势：
+
+轻量级，速度快，真的超快… 在Windows上我尝试过PyCharm，速度上不说了
+跨语言，跨平台
+强大的社区支持，配置简单本文中，我们将尝试把Sublime Text打造成一个full stack的Python开发环境，使用一些包和特性最大化其对Python的支持。本文所述快捷键基于Mac OS， Windows平台可能会略有不同。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Sublime Text打造你的Python IDE">
+<meta property="og:url" content="http://larryguo.com/2014/12/11/Sublime-Text-3-For-Python-Development/">
+<meta property="og:site_name" content="Larry's Blog">
+<meta property="og:description" content="先简单说下Sublime Text的优势：
+
+轻量级，速度快，真的超快… 在Windows上我尝试过PyCharm，速度上不说了
+跨语言，跨平台
+强大的社区支持，配置简单本文中，我们将尝试把Sublime Text打造成一个full stack的Python开发环境，使用一些包和特性最大化其对Python的支持。本文所述快捷键基于Mac OS， Windows平台可能会略有不同。">
+<meta property="og:image" content="http://7sbpgs.com1.z0.glb.clouddn.com/01.png">
+<meta property="og:image" content="http://7sbpgs.com1.z0.glb.clouddn.com/02.png">
+<meta property="og:image" content="http://7sbpgs.com1.z0.glb.clouddn.com/03.png">
+<meta property="og:image" content="http://7sbpgs.com1.z0.glb.clouddn.com/04.png">
+<meta property="og:image" content="http://7sbpgs.com1.z0.glb.clouddn.com/05.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Sublime Text打造你的Python IDE">
+<meta name="twitter:description" content="先简单说下Sublime Text的优势：
+
+轻量级，速度快，真的超快… 在Windows上我尝试过PyCharm，速度上不说了
+跨语言，跨平台
+强大的社区支持，配置简单本文中，我们将尝试把Sublime Text打造成一个full stack的Python开发环境，使用一些包和特性最大化其对Python的支持。本文所述快捷键基于Mac OS， Windows平台可能会略有不同。">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Larry&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Larry&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Larry writing here</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://larryguo.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Sublime-Text-3-For-Python-Development" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/11/Sublime-Text-3-For-Python-Development/" class="article-date">
+  <time datetime="2014-12-11T15:34:01.000Z" itemprop="datePublished">12月 11 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Development/">Development</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用Sublime Text打造你的Python IDE
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先简单说下Sublime Text的优势：</p>
+<ul>
+<li>轻量级，速度快，真的超快… 在Windows上我尝试过PyCharm，速度上不说了</li>
+<li>跨语言，跨平台</li>
+<li>强大的社区支持，配置简单<br>本文中，我们将尝试把Sublime Text打造成一个full stack的Python开发环境，使用一些包和特性最大化其对Python的支持。<br>本文所述快捷键基于Mac OS， Windows平台可能会略有不同。<a id="more"></a>
+</li>
+</ul>
+<hr>
+<h1 id="一些特性">一些特性</h1>
+<h2 id="Split_Layouts_|_代码分栏">Split Layouts | 代码分栏</h2>
+<p>这个特性允许你在同一个屏幕上分栏显示你的代码，这对TDD（分别显示Python代码、测试代码）和前端开发（分别显示HTML、CSS、Javascript）。<br>你可以用 ⎇⌘ + 2 调出双栏显示（数字1-4对应分为几栏，5为4等分屏，你也可以在View-&gt;Layout中找到他）<br><img src="http://7sbpgs.com1.z0.glb.clouddn.com/01.png" alt="split_layouts"></p>
+<h2 id="Chrome_风格的标签页">Chrome 风格的标签页</h2>
+<p>有助于你快速在多个文件中切换和编辑。</p>
+<h2 id="自动加载最后的Session">自动加载最后的Session</h2>
+<p>如果你不小心异常关闭了Sublime Text，放心，下次打开时他会自动加载你正在编辑的所有文件和文件夹。通常我会在Sublime Text中同时打开多个项目（速度太快没办法），如果我重新启动了电脑，他会在瞬间恢复到你启动前的样子。</p>
+<h2 id="Code_Snippets_|_代码补全">Code Snippets | 代码补全</h2>
+<p>代码补全非常适合用于输入大段固定格式的代码。完成有了这家伙，你只需要一小段文字或关键字，系统就会帮你生成大段的预设代码。<br>比如说，在Python程序中，如果你输入“defs”然后按下tab键，系统就会自动帮你创建一个def 方法的代码片段。这个例子是一个预设的代码片段功能，你也可以编辑你自己的代码片段，如果你想尝试一下，可以参考<a href="http://sublimetext.info/docs/en/extensibility/snippets.html" target="_blank" rel="external">这里</a>。<br>        sublime.set_clipboard(self.view.file_name() + ‘:’ + str(line_number))</p>
+<hr>
+<h1 id="个性化你的Sublime_Text">个性化你的Sublime Text</h1>
+<h2 id="subl_命令">subl 命令</h2>
+<p>Sublime Text提供了一个命令行工具subl，你可以使用这个命令在终端中打开文件或文件夹，我个人倒是很少使用这个功能，不过如果你想激活这个命令，需要打开Terminal为subl创建一个链接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> ln <span class="operator">-s</span> <span class="string">"/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"</span>  /bin/subl</div></pre></td></tr></table></figure>
+
+<p>这是使用sudo权限的全局做法，当然你也可以把subl连接到你用户的bin目录下并设置一下环境变量。<br>完成后，你就可以尝试使用subl命令了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># open the current directory</span></div><div class="line">$ subl .</div><div class="line"></div><div class="line"><span class="comment"># open a directory called tests</span></div><div class="line">$ subl ~/Documents/test</div><div class="line"></div><div class="line"><span class="comment"># open a file called text.txt</span></div><div class="line">$ subl test.txt</div></pre></td></tr></table></figure>
+
+<h2 id="安装Package_Control">安装Package Control</h2>
+<p>Package Control 是ST3的一个非常强大的组件，他能够帮助你非常便捷地管理ST3所有包的安装/删除/升级。<br>安装方法： 点击View &gt; Show Console调出ST3的Console界面，Copy 以下代码并回车执行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'7183a2d3e96f11eeadd761d777e62404'</span> + <span class="string">'e330c659d4bb41d3bdf022e94cab3cd0'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</div></pre></td></tr></table></figure>
+
+<p>恩，这里用的就是Python，有兴趣你可以试着读一下。<br>执行完成后重启ST3，就可以用 cmd+shift+P 调出PackageControl了。<br>在弹出的文本框装键入install选中 ·Package Control: Install Package· ， 键入回车， Package Control就会为你自动搜索可以安装的包。</p>
+<p>一些Package Control常用的方法：</p>
+<ul>
+<li><em>List Packages</em>:  显示所有已安装的包</li>
+<li><em>Remove Package</em>: 删除某个安装的包</li>
+<li><em>Upgrade Package</em>: 升级某个安装的包</li>
+<li><em>Upgrade/Overwrite All Packages</em>: 升级所有已安装的包<br>你可以在<a href="https://sublime.wbond.net/docs/usage" target="_blank" rel="external">这里</a>查看更多Package Control的命令。<br><img src="http://7sbpgs.com1.z0.glb.clouddn.com/02.png" alt="package_control"></li>
+</ul>
+<h2 id="创建你的用户配置文件">创建你的用户配置文件</h2>
+<p>你可以用JSON风格来书写ST3的配置，这使得配置信息非常易读，也很容易把你的配置同步到其他的设备或平台。<br>你可以在 Sublime Text &gt; Preferences &gt; Settings - User 找到你的个人配置文件，你可以根据个人喜好写入配置。例如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">      <span class="comment">// base settings</span></div><div class="line">      <span class="string">"show_minimap"</span>: <span class="literal">false</span>,  <span class="comment">// 关闭右侧的minimap</span></div><div class="line">      <span class="string">"tab_size"</span>: <span class="number">4</span>,  <span class="comment">// tab键等同于几个空格</span></div><div class="line">      <span class="string">"word_wrap"</span>: <span class="literal">true</span>  <span class="comment">// 允许自动换行</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>你也可以在这里设置主题、字体、颜色风格和一些行为。</p>
+<ol>
+<li>Setting - User 上面的 Setting - Default是全局的配置信息，里面有大多数配置项的说明和默认值，你可以根据这个文件在 Setting - User中修改你个人喜好的配置。</li>
+<li>你也可以参考 <a href="http://sublime-text-unofficial-documentation.readthedocs.org/en/latest/reference/settings.html" target="_blank" rel="external">这里</a>参考更多的配置说明。</li>
+<li>如果你只想某些配置针对某些程序语言生效，编辑 Sublime Text &gt; Preferences &gt; Settings &gt; More &gt; Syntax Specific - User 文件，并且保存为 LANGUAGE.sublime-settings 。例如，如果你想保存一些Python特有的设置，保存一个Python.sublime-settings文件。我的经验是，如果你当前打开的是某个语言的文件，则系统会自动为你打开那个语言的配置文件。</li>
+<li>你可以考虑用Dropboc同步你所有的设置，你的配置文件都可以在程序文件夹中找到。</li>
+</ol>
+<h2 id="主题">主题</h2>
+<p>ST3为你提供了大量的主题和配色方案选择，你甚至可以自己定制，不过下载一个现成的或许更方便。你可以通过Package Control查看和安装主题。<br><a href="https://sublime.wbond.net/packages/Theme%20-%20Soda" target="_blank" rel="external">Soda Dark Theme</a>很流行，目前我使用的是<a href="https://sublime.wbond.net/packages/Theme%20-%20Flatland" target="_blank" rel="external">Flatland</a>。<br>配色方案上我用的是 <a href="https://sublime.wbond.net/packages/Perv%20-%20Color%20Scheme" target="_blank" rel="external">Perv Orange</a>， 也有人推荐<a href="https://sublime.wbond.net/packages/Monokai%20Extended" target="_blank" rel="external">Monokai Extended</a>，你可以登陆 <a href="http://colorsublime.com/" target="_blank" rel="external">ColorSublime</a>预览一下。<br>字体方面我使用的是14号的<a href="http://font.ubuntu.com/#charset-mono-regular" target="_blank" rel="external">Ubuntu</a>, <a href="https://github.com/andreberg/Meslo-Font" target="_blank" rel="external">Meslo</a>也不错。顺便说下Mac OS 下安装字体通常的方法是下载ttf文件并双击。<br>安装好主题后，请确认在配置文件中配置了他们(color scheme可以通过 Sublime Text &gt; Preferences &gt; Color Scheme 选择，系统也默认提供了一些 )：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    "<span class="attribute">theme</span>": <span class="value"><span class="string">"Flatland Dark.sublime-theme"</span></span>,</div><div class="line">    "<span class="attribute">color_scheme</span>": <span class="value"><span class="string">"Packages/Perv - Color Scheme/Perv Orange Moonlight.tmTheme"</span></span>,</div><div class="line">    "<span class="attribute">font_face</span>": <span class="value"><span class="string">"Ubuntu"</span></span>,</div><div class="line">    "<span class="attribute">font_size</span>": <span class="value"><span class="number">14</span></span>,</div><div class="line">    "<span class="attribute">line_padding_bottom</span>": <span class="value"><span class="number">1</span></span>,</div><div class="line">    "<span class="attribute">line_padding_top</span>": <span class="value"><span class="number">1</span></span>,</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="扩展包推荐">扩展包推荐</h1>
+<p>活跃的社区也带来了大量优秀的扩展包，我安装了以下的一些并获益匪浅：</p>
+<h2 id="SideBarEnhancements">SideBarEnhancements</h2>
+<p><a href="https://sublime.wbond.net/packages/SideBarEnhancements" target="_blank" rel="external">SideBarEnhancements</a>扩展了左边栏的右键菜单功能，并且优化了一些默认的工作流。<br><img src="http://7sbpgs.com1.z0.glb.clouddn.com/03.png" alt="sidebar_enhancements"></p>
+<h2 id="Anaconda">Anaconda</h2>
+<p><a href="https://sublime.wbond.net/packages/Anaconda" target="_blank" rel="external">Anaconda</a>是一个终极的Python扩展包，他为ST3增加了很多IDE类的特性，包括：</p>
+<ul>
+<li>自动补全</li>
+<li>代码风格提示（基于PEP8），如果你不想使用这个功能，比如说你更愿意使用Sublime Linter，可以在 Sublime &gt; Preferences &gt; Package Settings &gt; Anaconda &gt; Settings User 中设置关闭： <code>{&quot;anaconda_linting&quot;: false}</code></li>
+<li><a href="http://baike.baidu.com/view/2033602.htm" target="_blank" rel="external">McCabe</a>代码复杂性检测</li>
+<li>Goto Definition / 跳转到定义</li>
+<li>Find Usage / 查找引用</li>
+<li>显示文档说明<br>所有这些功能都在鼠标右键中得Anaconda选项下可以调出。<br>需要留意的是，Anaconda安装好后是需要做一些配置的，如果你英文够好，建议阅读Readme文档，但你至少需要做下面的操作：<br>打开 Sublime Text &gt; Preferences &gt; Package Settings &gt; Anaconda  &gt; Settings - User, 输入</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    <span class="string">"python_interpreter"</span>: <span class="string">"/Library/Frameworks/Python.framework/Versions/3.4/bin/python3"</span>,  <span class="comment">// 这里输入你的python程序路径</span></div><div class="line">    <span class="string">"auto_python_builder_enabled"</span>: <span class="literal">false</span>,</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p><img src="http://7sbpgs.com1.z0.glb.clouddn.com/04.png" alt="anaconda"></p>
+<h2 id="Djaneiro">Djaneiro</h2>
+<p><a href="https://sublime.wbond.net/packages/Djaneiro" target="_blank" rel="external">Djaneiro</a>为Django的模板提供了很好地支持，并且提供了一些不错的代码补全，能够极大地节省你的时间，你可以在<a href="https://github.com/squ1b3r/Djaneiro" target="_blank" rel="external">这里</a>查阅代码补全的文档。例如，你可以用var创建 {{ }}, 用tag创建{% %}。</p>
+<h2 id="SublimeLinter">SublimeLinter</h2>
+<p><a href="https://sublime.wbond.net/packages/SublimeLinter" target="_blank" rel="external">SublimeLinter</a>是一个ST3 提示器框架，这个包本身不包含任何预设的提示器，你必须用Package Control安装提示包（SublimeLinter-[linter_name]）。你可以在<a href="https://github.com/SublimeLinter" target="_blank" rel="external">这里</a>找到一些官方提供的提示，实际上也存在大量第三方的提示器，查看<a href="http://sublimelinter.readthedocs.org/en/latest/installation.html" target="_blank" rel="external">这里</a>。<br>就Python而言，我推荐使用 <a href="https://sublime.wbond.net/packages/SublimeLinter-pyflakes" target="_blank" rel="external">SublimeLinter-pyflakes</a> 和  <a href="https://sublime.wbond.net/packages/SublimeLinter-pep8" target="_blank" rel="external">SublimeLinter-pep8</a><br>我也同时使用了：</p>
+<ul>
+<li><a href="https://sublime.wbond.net/packages/SublimeLinter-jshint" target="_blank" rel="external">SublimeLinter-jshint</a></li>
+<li><a href="https://sublime.wbond.net/packages/SublimeLinter-pyyaml" target="_blank" rel="external">SublimeLinter-pyyaml</a></li>
+<li><a href="https://sublime.wbond.net/packages/SublimeLinter-csslint" target="_blank" rel="external">SublimeLinter-csslint</a></li>
+<li><a href="https://sublime.wbond.net/packages/SublimeLinter-html-tidy" target="_blank" rel="external">SublimeLinter-html-tidy</a></li>
+<li><a href="https://sublime.wbond.net/packages/SublimeLinter-json" target="_blank" rel="external">SublimeLinter-json</a><br>所有的提示器可能都会有依赖关系，所以安装后请阅读安装文档。<br>你可以为每一个提示器创建配置，编辑 Sublime Text &gt; Preferences &gt; Package Settings &gt; SublimeLinter &gt; Settings User 即可，例如：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="string">"pep8"</span>: {</div><div class="line">    <span class="string">"@disable"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"args"</span>: [],</div><div class="line">    <span class="string">"excludes"</span>: [],</div><div class="line">    <span class="string">"ignore"</span>: <span class="string">"E501,C0301,W0142,W0402,R0201,E1101,E1102,C0103,R0901,R0903,R0904,C1001,W0223,W0232,W0201,E1103,R0801,C0111"</span>,</div><div class="line">    <span class="string">"max-line-length"</span>: <span class="number">100</span>,</div><div class="line">    <span class="string">"select"</span>: <span class="string">""</span></div><div class="line">},</div></pre></td></tr></table></figure>
+
+<h2 id="GitGutter">GitGutter</h2>
+<p><a href="https://sublime.wbond.net/packages/GitGutter" target="_blank" rel="external">GitGutter</a> 可以在ST3中线上显示一些小图标，标志上次Git Commit之后，哪些行做了改动。<br><img src="http://7sbpgs.com1.z0.glb.clouddn.com/05.png" alt="git_gutter"></p>
+<h2 id="FTPSync">FTPSync</h2>
+<p><a href="https://sublime.wbond.net/packages/FTPSync" target="_blank" rel="external">FTPSync</a> 帮助你同步你的项目到远程FTP 服务器。每一次打开或保存文件，FTPSync都会帮你完成这个同步工作，如果你打算添加一个远程连接，点击 Sublime Text &gt; Preferences &gt; Package Settings &gt; FTPSync &gt; Setup FTPSync。<br>一个例子：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  <span class="string">'primary'</span>: {</div><div class="line">    host: <span class="string">'ftp.mywebsite.com'</span>,</div><div class="line">    username: <span class="string">'johnsmith'</span>,</div><div class="line">    password: <span class="string">'secretpassword'</span>,</div><div class="line">    path: <span class="string">'/www/'</span>,</div><div class="line"></div><div class="line">    upload_on_save: <span class="literal">true</span>,</div><div class="line">    tls: <span class="literal">true</span></div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="Emmet">Emmet</h2>
+<p><a href="https://sublime.wbond.net/packages/Emmet" target="_blank" rel="external">Emmet</a>，由之前开发Zen Coding的团队开发，HTML和CSS代码生成神器！<br>举个例子， 如果你在一个html文件中键入 <code>!</code> 并按tab，Emmet会自动帮你生成以下代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line">    </div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>如果你输入<code>div&gt;ul&gt;li*3</code>并按tab， Emmet会帮你自动生成：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">ul</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>需要注意的是，Emmet的代码生成需要PyV8的支持，并且他会自动帮助你下载PyV8，如果弹出PyV8的安装提示，你可以稍等片刻，然后重启一下ST3试试，如果还是不行，你需要手动安装<a href="https://github.com/emmetio/pyv8-binaries#readme" target="_blank" rel="external">PyV8</a><br>你可以在这里查看Emmet的<a href="http://docs.emmet.io/actions/expand-abbreviation/" target="_blank" rel="external">官方文档</a>和<a href="http://docs.emmet.io/cheat-sheet/" target="_blank" rel="external">语法手册</a></p>
+<h2 id="Markdown_Preview">Markdown Preview</h2>
+<p><a href="https://sublime.wbond.net/packages/Markdown%20Preview" target="_blank" rel="external">Markdown Preview</a>可以帮助你便捷地预览你的Markdown代码效果。<br>使用的时候，⌘ Shift + p 调出Package Manager，输入Markdown Preview命令即可：</p>
+<ul>
+<li>Markdown Preview: Preview in Browser¬</li>
+<li>Markdown Preview: Copy to Clipboard</li>
+<li>Markdown Preview: Save to HTML</li>
+<li>Markdown Preview: Open Markdown Cheat sheet</li>
+</ul>
+<hr>
+<h1 id="快捷键">快捷键</h1>
+<p>ST3 提供了很多非常方便的快捷键：</p>
+<ul>
+<li>快速跳转到任何文件： ⌘+p</li>
+<li>快速调转到当前文件的某个方法： ⌘+r</li>
+<li>多处编辑：<ol>
+<li>选择一个单词，按 ⌘+d 可以选择下一个一样的单词，你可以不断按 ⌘+d，选中后可以对这些单词同时编辑</li>
+<li>按住⌘再点击鼠标可以不断追加选择你想要的任意位置，然后同时编辑这些地方</li>
+<li>按住⎇用鼠标拖拽可以在屏幕上选中任意多行，进行同时编辑</li>
+</ol>
+</li>
+<li>快速跳转：<ol>
+<li>⌘+上箭头 跳转到文件头部</li>
+<li>⌘+下箭头 跳转到文件尾部</li>
+<li>Ctrl+L 跳转到光标位置</li>
+<li>Ctrl+g 跳转到某一行</li>
+</ol>
+</li>
+<li>切换大小写： 选中文字后按住⌘，再按K和U，将当前文字变成全大写，按住⌘，再按K，L变成全小写</li>
+</ul>
+<p>如果你想了解更多快捷键，请查看<a href="http://sublime-text-unofficial-documentation.readthedocs.org/en/latest/reference/keyboard_shortcuts_osx.html" target="_blank" rel="external">这里</a></p>
+<hr>
+<h1 id="结束语">结束语</h1>
+<p>希望这篇文章可以帮助你整合一些好用的包，并且个性化你自己的配置，帮助你大大提高工作效率，如果有任何问题，可以在下面留言给我 :)</p>
+<hr>
+<h1 id="鸣谢">鸣谢</h1>
+<p>本文内容主要参考了 Derrick Kearney 的 <a href="https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/" target="_blank" rel="external">Setting Up Sublime Text 3 for Full Stack Python Development</a>， 特此表示感谢。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://larryguo.com/2014/12/11/Sublime-Text-3-For-Python-Development/" data-id="kmyi1jfqar02kzrk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anaconda/">Anaconda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python3/">Python3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/12/10/Encoding-System-in-Computer/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算机的字符、字符集、编码、Unicode</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Technology/">Technology</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/">Anaconda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python3/">Python3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UTF-8/">UTF-8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode/">unicode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码/">编码</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Anaconda/" style="font-size: 10.00px;">Anaconda</a><a href="/tags/Blog/" style="font-size: 20.00px;">Blog</a><a href="/tags/Github/" style="font-size: 15.00px;">Github</a><a href="/tags/Hexo/" style="font-size: 15.00px;">Hexo</a><a href="/tags/Python3/" style="font-size: 15.00px;">Python3</a><a href="/tags/Sublime-Text/" style="font-size: 10.00px;">Sublime Text</a><a href="/tags/UTF-8/" style="font-size: 10.00px;">UTF-8</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/unicode/" style="font-size: 10.00px;">unicode</a><a href="/tags/编码/" style="font-size: 15.00px;">编码</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/12/11/Sublime-Text-3-For-Python-Development/">用Sublime Text打造你的Python IDE</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/10/Encoding-System-in-Computer/">计算机的字符、字符集、编码、Unicode</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/10/Python-Encoding/">Python中的字符和编码</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/04/Hexo-on-Github-2-plugins-and-themes/">Hexo on Github(2): 插件和主题</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/28/Markdown-for-newbie/">Markdown 新手指南</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 Larry Guo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
