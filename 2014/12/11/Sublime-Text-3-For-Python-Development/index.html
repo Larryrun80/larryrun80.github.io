@@ -5,20 +5,12 @@
   
   <title>用Sublime Text打造你的Python IDE | Larry&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="先简单说下Sublime Text的优势：
-
-轻量级，速度快，真的超快… 在Windows上我尝试过PyCharm，速度上不说了
-跨语言，跨平台
-强大的社区支持，配置简单本文中，我们将尝试把Sublime Text打造成一个full stack的Python开发环境，使用一些包和特性最大化其对Python的支持。本文所述快捷键基于Mac OS， Windows平台可能会略有不同。">
+  <meta name="description" content="I'm writing here all things.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用Sublime Text打造你的Python IDE">
 <meta property="og:url" content="http://larryguo.com/2014/12/11/Sublime-Text-3-For-Python-Development/">
 <meta property="og:site_name" content="Larry's Blog">
-<meta property="og:description" content="先简单说下Sublime Text的优势：
-
-轻量级，速度快，真的超快… 在Windows上我尝试过PyCharm，速度上不说了
-跨语言，跨平台
-强大的社区支持，配置简单本文中，我们将尝试把Sublime Text打造成一个full stack的Python开发环境，使用一些包和特性最大化其对Python的支持。本文所述快捷键基于Mac OS， Windows平台可能会略有不同。">
+<meta property="og:description" content="I'm writing here all things.">
 <meta property="og:image" content="http://7sbpgs.com1.z0.glb.clouddn.com/01.png">
 <meta property="og:image" content="http://7sbpgs.com1.z0.glb.clouddn.com/02.png">
 <meta property="og:image" content="http://7sbpgs.com1.z0.glb.clouddn.com/03.png">
@@ -26,17 +18,15 @@
 <meta property="og:image" content="http://7sbpgs.com1.z0.glb.clouddn.com/05.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Sublime Text打造你的Python IDE">
-<meta name="twitter:description" content="先简单说下Sublime Text的优势：
-
-轻量级，速度快，真的超快… 在Windows上我尝试过PyCharm，速度上不说了
-跨语言，跨平台
-强大的社区支持，配置简单本文中，我们将尝试把Sublime Text打造成一个full stack的Python开发环境，使用一些包和特性最大化其对Python的支持。本文所述快捷键基于Mac OS， Windows平台可能会略有不同。">
+<meta name="twitter:description" content="I'm writing here all things.">
+<meta name="twitter:creator" content="@Larryguo80">
+<link rel="publisher" href="larryrun80@gmail.com">
 
   
     <link rel="alternative" href="/atom.xml" title="Larry&#39;s Blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.ico">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -44,6 +34,7 @@
   
 
 </head>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -71,7 +62,10 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/larryrun80" title="Github" target="_blank"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" target="_blank"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
@@ -81,12 +75,16 @@
     </div>
   </div>
 </header>
+
       <div class="outer">
         <section id="main"><article id="post-Sublime-Text-3-For-Python-Development" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/12/11/Sublime-Text-3-For-Python-Development/" class="article-date">
+    
+<a href="/2014/12/11/Sublime-Text-3-For-Python-Development/" class="article-date">
   <time datetime="2014-12-11T15:34:01.000Z" itemprop="datePublished">12月 11 2014</time>
 </a>
+
+
     
   <div class="article-category">
     <a class="article-category-link" href="/categories/Development/">Development</a>
@@ -108,6 +106,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+		
+		<div id="toc" class="toc-article">
+			<h2 class="toc-title"><span>文章目录</span></h2>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一些特性"><span class="toc-number">1.</span> <span class="toc-text">一些特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Split_Layouts_|_代码分栏"><span class="toc-number">1.1.</span> <span class="toc-text">Split Layouts | 代码分栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome_风格的标签页"><span class="toc-number">1.2.</span> <span class="toc-text">Chrome 风格的标签页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动加载最后的Session"><span class="toc-number">1.3.</span> <span class="toc-text">自动加载最后的Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code_Snippets_|_代码补全"><span class="toc-number">1.4.</span> <span class="toc-text">Code Snippets | 代码补全</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#个性化你的Sublime_Text"><span class="toc-number">2.</span> <span class="toc-text">个性化你的Sublime Text</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#subl_命令"><span class="toc-number">2.1.</span> <span class="toc-text">subl 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Package_Control"><span class="toc-number">2.2.</span> <span class="toc-text">安装Package Control</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建你的用户配置文件"><span class="toc-number">2.3.</span> <span class="toc-text">创建你的用户配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题"><span class="toc-number">2.4.</span> <span class="toc-text">主题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#扩展包推荐"><span class="toc-number">3.</span> <span class="toc-text">扩展包推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SideBarEnhancements"><span class="toc-number">3.1.</span> <span class="toc-text">SideBarEnhancements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda"><span class="toc-number">3.2.</span> <span class="toc-text">Anaconda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Djaneiro"><span class="toc-number">3.3.</span> <span class="toc-text">Djaneiro</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SublimeLinter"><span class="toc-number">3.4.</span> <span class="toc-text">SublimeLinter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitGutter"><span class="toc-number">3.5.</span> <span class="toc-text">GitGutter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FTPSync"><span class="toc-number">3.6.</span> <span class="toc-text">FTPSync</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Emmet"><span class="toc-number">3.7.</span> <span class="toc-text">Emmet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown_Preview"><span class="toc-number">3.8.</span> <span class="toc-text">Markdown Preview</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#快捷键"><span class="toc-number">4.</span> <span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结束语"><span class="toc-number">5.</span> <span class="toc-text">结束语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#鸣谢"><span class="toc-number">6.</span> <span class="toc-text">鸣谢</span></a></li></ol>
+		
+		</div>
+		
         <p>先简单说下Sublime Text的优势：</p>
 <ul>
 <li>轻量级，速度快，真的超快… 在Windows上我尝试过PyCharm，速度上不说了</li>
@@ -246,10 +252,19 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://larryguo.com/2014/12/11/Sublime-Text-3-For-Python-Development/" data-id="99lpdwgbyhk5xw4u" class="article-share-link">Share</a>
-      
+	  
+	  <!-- 百度分享 Start -->
+	  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+	  <!-- 百度分享 End -->
+	  
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anaconda/">Anaconda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python3/">Python3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li></ul>
+
+	  
+<span>
+更新日期:<time datetime="2014-12-13T13:29:17.000Z" itemprop="dateModified">12月 13 2014</time>
+</span>
+
 
     </footer>
   </div>
@@ -268,49 +283,78 @@
   
 </article>
 
+
+
+<!-- 多说评论框 start -->
+
+<section id="comments">
+  <div class="ds-thread"  data-thread-key="/2014/12/11/Sublime-Text-3-For-Python-Development/" data-title="用Sublime Text打造你的Python IDE" data-url="http://larryguo.com/2014/12/11/Sublime-Text-3-For-Python-Development/" id="ds_thread">
+    <noscript>Please enable JavaScript to view the <a href="//duoshuo.com/?ref_noscript">comments powered by duoshuo.</a></noscript>
+  </div>
+</section>
+
+<!-- 多说评论框 end -->
 </section>
         
-          <aside id="sidebar">
+          
+  <div id="toc" class="toc-aside">
+  <h2 class="toc-title">文章目录</h2>
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一些特性"><span class="toc-number">1.</span> <span class="toc-text">一些特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Split_Layouts_|_代码分栏"><span class="toc-number">1.1.</span> <span class="toc-text">Split Layouts | 代码分栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome_风格的标签页"><span class="toc-number">1.2.</span> <span class="toc-text">Chrome 风格的标签页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动加载最后的Session"><span class="toc-number">1.3.</span> <span class="toc-text">自动加载最后的Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code_Snippets_|_代码补全"><span class="toc-number">1.4.</span> <span class="toc-text">Code Snippets | 代码补全</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#个性化你的Sublime_Text"><span class="toc-number">2.</span> <span class="toc-text">个性化你的Sublime Text</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#subl_命令"><span class="toc-number">2.1.</span> <span class="toc-text">subl 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Package_Control"><span class="toc-number">2.2.</span> <span class="toc-text">安装Package Control</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建你的用户配置文件"><span class="toc-number">2.3.</span> <span class="toc-text">创建你的用户配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题"><span class="toc-number">2.4.</span> <span class="toc-text">主题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#扩展包推荐"><span class="toc-number">3.</span> <span class="toc-text">扩展包推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SideBarEnhancements"><span class="toc-number">3.1.</span> <span class="toc-text">SideBarEnhancements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda"><span class="toc-number">3.2.</span> <span class="toc-text">Anaconda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Djaneiro"><span class="toc-number">3.3.</span> <span class="toc-text">Djaneiro</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SublimeLinter"><span class="toc-number">3.4.</span> <span class="toc-text">SublimeLinter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitGutter"><span class="toc-number">3.5.</span> <span class="toc-text">GitGutter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FTPSync"><span class="toc-number">3.6.</span> <span class="toc-text">FTPSync</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Emmet"><span class="toc-number">3.7.</span> <span class="toc-text">Emmet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown_Preview"><span class="toc-number">3.8.</span> <span class="toc-text">Markdown Preview</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#快捷键"><span class="toc-number">4.</span> <span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结束语"><span class="toc-number">5.</span> <span class="toc-text">结束语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#鸣谢"><span class="toc-number">6.</span> <span class="toc-text">鸣谢</span></a></li></ol>
+    
+  </div>
+
+<aside id="sidebar">
+
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">ABOUT ME</h3>
+  <ul class="widget about-me">
+    
+    <li><img class="author" title="About me" src="/images/me.png" /></li>
+    
+    
+    <li>Hi, I'm Larry.</li>
+    
+  </ul>
+</div>
+
+
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">分类</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Technology/">Technology</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/">Anaconda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python3/">Python3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UTF-8/">UTF-8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode/">unicode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码/">编码</a><span class="tag-list-count">2</span></li></ul>
-    </div>
-  </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Anaconda/" style="font-size: 10.00px;">Anaconda</a><a href="/tags/Blog/" style="font-size: 20.00px;">Blog</a><a href="/tags/Github/" style="font-size: 15.00px;">Github</a><a href="/tags/Hexo/" style="font-size: 15.00px;">Hexo</a><a href="/tags/Python3/" style="font-size: 15.00px;">Python3</a><a href="/tags/Sublime-Text/" style="font-size: 10.00px;">Sublime Text</a><a href="/tags/UTF-8/" style="font-size: 10.00px;">UTF-8</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/unicode/" style="font-size: 10.00px;">unicode</a><a href="/tags/编码/" style="font-size: 15.00px;">编码</a>
+      <a href="/tags/Anaconda/" style="font-size: 13.00px; color: #7dc3de;">Anaconda</a><a href="/tags/Blog/" style="font-size: 20.00px; color: #800080;">Blog</a><a href="/tags/Github/" style="font-size: 16.50px; color: #7f62af;">Github</a><a href="/tags/Hexo/" style="font-size: 16.50px; color: #7f62af;">Hexo</a><a href="/tags/Python3/" style="font-size: 16.50px; color: #7f62af;">Python3</a><a href="/tags/Sublime-Text/" style="font-size: 13.00px; color: #7dc3de;">Sublime Text</a><a href="/tags/UTF-8/" style="font-size: 13.00px; color: #7dc3de;">UTF-8</a><a href="/tags/markdown/" style="font-size: 13.00px; color: #7dc3de;">markdown</a><a href="/tags/unicode/" style="font-size: 13.00px; color: #7dc3de;">unicode</a><a href="/tags/编码/" style="font-size: 16.50px; color: #7f62af;">编码</a>
     </div>
   </div>
+
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">archive</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
+
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
+    <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
         
@@ -338,8 +382,20 @@
     </div>
   </div>
 
+
   
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">最新评论</h3>
+  <ul class="widget ds-recent-comments" data-num-items="5" data-show-avatars="0" data-show-title="1" data-show-time="1"></ul>
+</div>
+<!-- 需要多说的公用代码 -->
+
+
+  
+
 </aside>
+
         
       </div>
       <footer id="footer">
@@ -347,10 +403,11 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2014 Larry Guo<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/howiefh/hexo-theme-landscape-f" target="_blank" title="Landscape-F">Landscape-F</a>
     </div>
   </div>
 </footer>
+
     </div>
     <nav id="mobile-nav">
   
@@ -361,12 +418,59 @@
 </nav>
     
 
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"larry"};
+  (function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+<!-- 多说公共JS代码 end -->
+
+<!-- 百度分享 start -->
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","douban","bdysc","sqq","qq","hi","baidu","huaban","youdao","sdo","mail","xg","diandian","fx","copy","print"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<!-- 百度分享 end -->
+
+<!--
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+-->
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+
 
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
 
   <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<div class="bottom-btn">
+
+	<a class="icon-gotop" href="javascript:void(0)" title="返回顶部"></a>
+	<script src="/js/gotop.js" type="text/javascript"></script>
+
+	<!--
+	<script src="/js/gotop.js"></script>
+	-->
+
+
+	<a class="icon-toc-toggle" href="javascript:void(0)" title="文章目录"></a>
+	<!--
+	<script src="/js/toc_aside_toggle.js"></script>
+	-->
+
+</div>
+<script src="/js/toc_aside_toggle.js" type="text/javascript"></script>
 
 
 
