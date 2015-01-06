@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/1 | Larry&#39;s Blog</title>
+  <title>Django-Model概述（Learning Django 1） | Larry&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="I'm writing here all things.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Larry's Blog">
-<meta property="og:url" content="http://larryguo.com/archives/2015/01/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django-Model概述（Learning Django 1）">
+<meta property="og:url" content="http://larryguo.com/2015/01/04/django-model/">
 <meta property="og:site_name" content="Larry's Blog">
 <meta property="og:description" content="I'm writing here all things.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Larry's Blog">
+<meta name="twitter:title" content="Django-Model概述（Learning Django 1）">
 <meta name="twitter:description" content="I'm writing here all things.">
 <meta name="twitter:creator" content="@Larryguo80">
 <link rel="publisher" href="larryrun80@gmail.com">
@@ -72,183 +72,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-django-model-field" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-<a href="/2015/01/05/django-model-field/" class="article-date">
-  <time datetime="2015-01-05T02:10:12.000Z" itemprop="datePublished">1月 5 2015</time>
-</a>
-
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Technology/">Technology</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/05/django-model-field/">Django-Model:Field参考</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-		
-		<div id="toc" class="toc-article">
-			<h2 class="toc-title"><span>文章目录</span></h2>
-		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Field_options_/_字段可选项"><span class="toc-number">1.</span> <span class="toc-text">Field options / 字段可选项</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.1.</span> <span class="toc-text">null</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#blank"><span class="toc-number">1.2.</span> <span class="toc-text">blank</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#choices"><span class="toc-number">1.3.</span> <span class="toc-text">choices</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#db_column"><span class="toc-number">1.4.</span> <span class="toc-text">db_column</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#db_index"><span class="toc-number">1.5.</span> <span class="toc-text">db_index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#db_tablespace"><span class="toc-number">1.6.</span> <span class="toc-text">db_tablespace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#default"><span class="toc-number">1.7.</span> <span class="toc-text">default</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#editable"><span class="toc-number">1.8.</span> <span class="toc-text">editable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#error_messages"><span class="toc-number">1.9.</span> <span class="toc-text">error_messages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#help_text"><span class="toc-number">1.10.</span> <span class="toc-text">help_text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#primary_key"><span class="toc-number">1.11.</span> <span class="toc-text">primary_key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unique"><span class="toc-number">1.12.</span> <span class="toc-text">unique</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unique_for_date_/_unique_for_month_/_unique_for_year"><span class="toc-number">1.13.</span> <span class="toc-text">unique_for_date / unique_for_month / unique_for_year</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#verbose_name"><span class="toc-number">1.14.</span> <span class="toc-text">verbose_name</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#validators"><span class="toc-number">1.15.</span> <span class="toc-text">validators</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Field_types_/_字段类型"><span class="toc-number">2.</span> <span class="toc-text">Field types / 字段类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AutoField"><span class="toc-number">2.1.</span> <span class="toc-text">AutoField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigIntegerField"><span class="toc-number">2.2.</span> <span class="toc-text">BigIntegerField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BinaryField"><span class="toc-number">2.3.</span> <span class="toc-text">BinaryField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BooleanField"><span class="toc-number">2.4.</span> <span class="toc-text">BooleanField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CharField"><span class="toc-number">2.5.</span> <span class="toc-text">CharField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CommaSeparatedIntegerField"><span class="toc-number">2.6.</span> <span class="toc-text">CommaSeparatedIntegerField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateField"><span class="toc-number">2.7.</span> <span class="toc-text">DateField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateTimeField"><span class="toc-number">2.8.</span> <span class="toc-text">DateTimeField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DecimalField"><span class="toc-number">2.9.</span> <span class="toc-text">DecimalField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EmailField"><span class="toc-number">2.10.</span> <span class="toc-text">EmailField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FileField"><span class="toc-number">2.11.</span> <span class="toc-text">FileField</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FileField_and_FieldFile"><span class="toc-number">2.11.1.</span> <span class="toc-text">FileField and FieldFile</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FilePathField"><span class="toc-number">2.12.</span> <span class="toc-text">FilePathField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FloatField"><span class="toc-number">2.13.</span> <span class="toc-text">FloatField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ImageField"><span class="toc-number">2.14.</span> <span class="toc-text">ImageField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IntegerField"><span class="toc-number">2.15.</span> <span class="toc-text">IntegerField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPAddressField"><span class="toc-number">2.16.</span> <span class="toc-text">IPAddressField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GenericIPAddressField"><span class="toc-number">2.17.</span> <span class="toc-text">GenericIPAddressField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NullBooleanField"><span class="toc-number">2.18.</span> <span class="toc-text">NullBooleanField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PositiveIntegerField"><span class="toc-number">2.19.</span> <span class="toc-text">PositiveIntegerField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PositiveSmallIntegerField"><span class="toc-number">2.20.</span> <span class="toc-text">PositiveSmallIntegerField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SlugField"><span class="toc-number">2.21.</span> <span class="toc-text">SlugField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SmallIntegerField"><span class="toc-number">2.22.</span> <span class="toc-text">SmallIntegerField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TextField"><span class="toc-number">2.23.</span> <span class="toc-text">TextField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TimeField"><span class="toc-number">2.24.</span> <span class="toc-text">TimeField</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URLField"><span class="toc-number">2.25.</span> <span class="toc-text">URLField</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Relationship_fields"><span class="toc-number">3.</span> <span class="toc-text">Relationship fields</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ForeignKey"><span class="toc-number">3.1.</span> <span class="toc-text">ForeignKey</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Database_Representation"><span class="toc-number">3.1.1.</span> <span class="toc-text">Database Representation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Arguments"><span class="toc-number">3.1.2.</span> <span class="toc-text">Arguments</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ManyToManyField"><span class="toc-number">3.2.</span> <span class="toc-text">ManyToManyField</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Database_Representation-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">Database Representation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Arguments-1"><span class="toc-number">3.2.2.</span> <span class="toc-text">Arguments</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OneToOneField"><span class="toc-number">3.3.</span> <span class="toc-text">OneToOneField</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Field_API_reference"><span class="toc-number">4.</span> <span class="toc-text">Field API reference</span></a></li></ol>
-		
-		</div>
-		
-        <p>源文档地址：<a href="https://docs.djangoproject.com/en/1.7/ref/models/fields/#db-column" target="_blank" rel="external">Django Model Field</a><br>Django Version: 1.7</p>
-<h1 id="Field_options_/_字段可选项">Field options / 字段可选项</h1>
-<h2 id="null">null</h2>
-<p>是否可为空，默认False，如果需要在布尔型字段接受空值，请使用NullBooleanField。</p>
-<h2 id="blank">blank</h2>
-<p>是否允许空值，与null的区别在于，null是纯粹数据库相关的，而blank是一个输入校验相关的。</p>
-<h2 id="choices">choices</h2>
-<p>有两个元素组成的列表或元组集合，作为这个字段的可选输入项，前者是存储于数据库的真实值，后者是一个可读的命名。<br>通常建议在Model类中定义choices，并且用适当命名的常量来表征每个值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(models.Model)</span>:</span></div><div class="line">    FRESHMAN = <span class="string">'FR'</span></div><div class="line">    SOPHOMORE = <span class="string">'SO'</span></div><div class="line">    JUNIOR = <span class="string">'JR'</span></div><div class="line">    SENIOR = <span class="string">'SR'</span></div><div class="line">    YEAR_IN_SCHOOL_CHOICES = (</div><div class="line">        (FRESHMAN, <span class="string">'Freshman'</span>),</div><div class="line">        (SOPHOMORE, <span class="string">'Sophomore'</span>),</div><div class="line">        (JUNIOR, <span class="string">'Junior'</span>),</div><div class="line">        (SENIOR, <span class="string">'Senior'</span>),</div><div class="line">    )</div><div class="line">    year_in_school = models.CharField(max_length=<span class="number">2</span>,</div><div class="line">                                      choices=YEAR_IN_SCHOOL_CHOICES,</div><div class="line">                                      default=FRESHMAN)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_upperclass</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.year_in_school <span class="keyword">in</span> (self.JUNIOR, self.SENIOR)</div></pre></td></tr></table></figure>
-
-<p>这样，你可以在任何应用Student Model的地方使用 Student.SOPHOMORE 来表征’SO’。<br>对每一个choices set， Django提供了一个方法来获取可读命名： get_FOO_display()</p>
-<p>针对choices， Django会自动在下拉框渲染一个’———‘行，如果你要覆盖这个行为，为choices增加一个None值： (None, ‘Your String For Display’), 当然你也可以使用 ’‘ 替代None。</p>
-<h2 id="db_column">db_column</h2>
-<p>对应的数据库的列名，如果不定义，Django会使用字段名。</p>
-<h2 id="db_index">db_index</h2>
-<p>对这个字段创建索引。</p>
-<h2 id="db_tablespace">db_tablespace</h2>
-<p>表空间，不支持表空间的数据库类型将会被忽略。</p>
-<h2 id="default">default</h2>
-<p>默认值，可以是一个值或一个可调用的对象。如果是后者，每次新对象创建时，那个需要被调用的对象都会被调用。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">contact_default</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> {<span class="string">"email"</span>: <span class="string">"to1@example.com"</span>}</div><div class="line"></div><div class="line">contact_info = JSONField(<span class="string">"ContactInfo"</span>, default=contact_default)</div></pre></td></tr></table></figure>
-
-<h2 id="editable">editable</h2>
-<p>如果是False, 这个指端不会在admin后台或其他Form中显示，他们也将跳过类型检测，默认为True。</p>
-<h2 id="error_messages">error_messages</h2>
-<p>如果定义会覆盖原生的错误方法，传入一个包含error key和你想变更的error message的dictionary。<br>error key： null，blank, invalid, invalid_choice, unique, and unique_for_date。 在 <a href="https://docs.djangoproject.com/en/1.7/ref/models/fields/#field-types" target="_blank" rel="external">这里</a> 查看更多。</p>
-<h2 id="help_text">help_text</h2>
-<p>在form渲染的时候会被展示，他也同样具有文档价值。 如果你需要展现出HTML的表现形式，可以定义HTML标签。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">help_text=<span class="string">"Please use the following format: &lt;em&gt;YYYY-MM-DD&lt;/em&gt;."</span></div></pre></td></tr></table></figure>
-
-<h2 id="primary_key">primary_key</h2>
-<p>定义主键， 如果你没有定义任何主键， Django会帮你自动生成一个AutoField类型的主键。<br>如果定义了primary_key=True， 同时也意味着定义了 null=False， unique=True。<br>一个对象只允许一个主键。<br>主键是只读的，如果你尝试变更他的值，Django会为你创建一个新的对象并保有旧的。</p>
-<h2 id="unique">unique</h2>
-<p>如果是True，这个字段的值将在全表表示唯一。<br>这个选项在除了 ManyToManyField, OneToOneField, FileField 的字段可用。<br>如果一个字段的unique呗设置为True，你不需要再设置db_index。</p>
-<h2 id="unique_for_date_/_unique_for_month_/_unique_for_year">unique_for_date / unique_for_month / unique_for_year</h2>
-<p>针对DateField或DateTimeField，保证他们对应的属性（日期、月、年）唯一。</p>
-<h2 id="verbose_name">verbose_name</h2>
-<p>字段的可读命名。如果不设置，Django会根据字段名自动创建。</p>
-<h2 id="validators">validators</h2>
-<p>验证器，对输入进行验证，详见<a href="https://docs.djangoproject.com/en/1.7/ref/validators/" target="_blank" rel="external">validators</a></p>
-<h1 id="Field_types_/_字段类型">Field types / 字段类型</h1>
-<h2 id="AutoField">AutoField</h2>
-<p>自增字段，整型</p>
-<h2 id="BigIntegerField">BigIntegerField</h2>
-<p>64位整数，取值范围 -9223372036854775808 到 9223372036854775807</p>
-<h2 id="BinaryField">BinaryField</h2>
-<p>存储二进制数据，只支持bytes类型的赋值。<br>不能应用queryset进行查询。</p>
-<h2 id="BooleanField">BooleanField</h2>
-<p>布尔型， 值为 true/false， 将被渲染成CheckboxInput。<br>如果你希望能采用null值，使用 NullBooleanField。<br>初始值为 None。</p>
-<h2 id="CharField">CharField</h2>
-<p>字符型，如果你需要存储大量文字，使用TextField。<br>CharField有一个必须指定的参数： max_length。</p>
-<h2 id="CommaSeparatedIntegerField">CommaSeparatedIntegerField</h2>
-<p>存储一组被逗号分隔的整数，max_length是必选参数。</p>
-<h2 id="DateField">DateField</h2>
-<p>对应Python中的datetime.date实例，有一些可选参数：</p>
-<p>DateField.auto_now<br>每次对象保存时，自动更新当前时间，在’last-modified’这样的字段中非常有用。</p>
-<p>DateField.auto_now_add<br>每个对象创建的时候，自动记录当前时间，</p>
-<p>以上两个参数不能被重载。<br>这个字段会被默认渲染为文本框，在admin中已经添加了一个javascript日历控件，并且有一个’今日’快捷键。<br>这个类型也包含一个invalid_date错误信息key</p>
-<h2 id="DateTimeField">DateTimeField</h2>
-<p>对应Python中的datetime.datetime类型，和dateField拥有相同的附加属性。</p>
-<h2 id="DecimalField">DecimalField</h2>
-<p>浮点数。两个必须参数：<br>DecimalField.max_digits : 数字的总长<br>DecimalField.decimal_places : 小数部分长度<br>前者必须大于等于后者。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">models.DecimalField(..., max_digits=<span class="number">5</span>, decimal_places=<span class="number">2</span>)</div></pre></td></tr></table></figure>
-
-<h2 id="EmailField">EmailField</h2>
-<p>这个类型会自动做电子邮件验证，max_length默认值是75，目前75已经无法兼容RFC3696/5321标准的所有电子邮件，所以建议设置max_length为254，处于向下兼容的原因，默认值仍将保持为75.</p>
-<h2 id="FileField">FileField</h2>
-<p>文件上传字段。这个字段不支持primary_key和unique属性。</p>
-<p>两个附加属性：<br>upload_to: 一个相对路径，相对于配置项中 MEDIA_ROOT 配置，也就是说，这个路径会挂在MEDIA_ROOT后面形成一个真实访问路径。<br>路径中可以包含strftime()格式，在文件上传时，这部分会被当时的日期/时间替代。例： <code>photos/%Y/%m/%d</code><br>这个参数也可以是一个可调用的函数，这个函数必须接受两个参数并返回一个Unix风格的路径。<br>需要传入的参数是：</p>
-<ul>
-<li>instance： 定义FileField的对象的实例，通常是正在被上传的文件所在的实例。需要注意的时，此时通常这个对象还没有被保存到数据库，如果使用了一个AutoField字段作为主键，此时这个对象应该还没有获得主键。</li>
-<li>filename： 原文件名。</li>
-</ul>
-<p>在Model中使用FileField和ImageField需要以下步骤：</p>
-<ol>
-<li>在settings中定义MEDIA_ROOT和MEDIA_URL，并且确认web server用户对文件夹有写权限；</li>
-<li>在Model中加入FileField或ImageField，定义upload_to参数定义上传到MEDIA_ROOT的某个子文件夹；</li>
-<li>所有数据库中保存的都是一个相对于MEDIA_URL的路径，你可以使用Django提供的url属性反问道这个路径，例如，如果你的文件名是mug_shot，你可以在模板中这样获取绝对路径： ``</li>
-</ol>
-<p>例： 如果你的MEDIA_ROOT定义为 /home/media，upload_to定义为<code>photos/%Y/%m/%d</code>，你在2007年1月15日上传了一个文件，这个文件将被存在文件夹：/home/media/photos/2007/01/15<br>请注意上传文件的安全问题，不要让人能够把一个CGI或PHP文件传到你的可访问目录。<br>更多信息请参考： <a href="https://docs.djangoproject.com/en/1.7/topics/files/#managing-files" target="_blank" rel="external">Managing files</a></p>
-<h3 id="FileField_and_FieldFile">FileField and FieldFile</h3>
-<h2 id="FilePathField">FilePathField</h2>
-<h2 id="FloatField">FloatField</h2>
-<h2 id="ImageField">ImageField</h2>
-<h2 id="IntegerField">IntegerField</h2>
-<h2 id="IPAddressField">IPAddressField</h2>
-<h2 id="GenericIPAddressField">GenericIPAddressField</h2>
-<h2 id="NullBooleanField">NullBooleanField</h2>
-<h2 id="PositiveIntegerField">PositiveIntegerField</h2>
-<h2 id="PositiveSmallIntegerField">PositiveSmallIntegerField</h2>
-<h2 id="SlugField">SlugField</h2>
-<h2 id="SmallIntegerField">SmallIntegerField</h2>
-<h2 id="TextField">TextField</h2>
-<h2 id="TimeField">TimeField</h2>
-<h2 id="URLField">URLField</h2>
-<h1 id="Relationship_fields">Relationship fields</h1>
-<h2 id="ForeignKey">ForeignKey</h2>
-<h3 id="Database_Representation">Database Representation</h3>
-<h3 id="Arguments">Arguments</h3>
-<h2 id="ManyToManyField">ManyToManyField</h2>
-<h3 id="Database_Representation-1">Database Representation</h3>
-<h3 id="Arguments-1">Arguments</h3>
-<h2 id="OneToOneField">OneToOneField</h2>
-<h1 id="Field_API_reference">Field API reference</h1>
-
-      
-    </div>
-    <footer class="article-footer">
-	  
-	  <a data-url="http://larryguo.com/2015/01/05/django-model-field/" data-id="030m521r2c55d6cq" data_title="Django-Model:Field参考" data_summary="源文档地址：Django Model FieldDja..." class="article-share-link">Share</a>
-      
-
-      
-        <a href="http://larryguo.com/2015/01/05/django-model-field/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="/2015/01/05/django-model-field/">暂无评论</a>
-      
-	  
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Model/">Model</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-	  
-<span>
-更新日期:<time datetime="2015-01-05T05:57:07.000Z" itemprop="dateModified">1月 5 2015</time>
-</span>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- 多说评论框 start -->
-
-<!-- 多说评论框 end -->
-
-  
-    <article id="post-django-model" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-django-model" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
 <a href="/2015/01/04/django-model/" class="article-date">
@@ -268,8 +92,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/04/django-model/">Django-Model概述（Learning Django 1）</a>
+    <h1 class="article-title" itemprop="name">
+      Django-Model概述（Learning Django 1）
     </h1>
   
 
@@ -413,12 +237,9 @@
     </div>
     <footer class="article-footer">
 	  
-	  <a data-url="http://larryguo.com/2015/01/04/django-model/" data-id="iyc3mmtykifa1ec4" data_title="Django-Model概述（Learning Django 1）" data_summary="这一系列文章来自于Django官方文档，我在这里用中文..." class="article-share-link">Share</a>
-      
-
-      
-        <a href="http://larryguo.com/2015/01/04/django-model/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="/2015/01/04/django-model/">暂无评论</a>
-      
+	  <!-- 百度分享 Start -->
+	  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+	  <!-- 百度分享 End -->
 	  
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Model/">Model</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -432,173 +253,26 @@
     </footer>
   </div>
   
-</article>
-
-
-
-<!-- 多说评论框 start -->
-
-<!-- 多说评论框 end -->
-
+    
+<nav id="article-nav">
   
-    <article id="post-movie150101" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-<a href="/2015/01/03/movie150101/" class="article-date">
-  <time datetime="2015-01-02T17:08:25.000Z" itemprop="datePublished">1月 3 2015</time>
-</a>
-
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/电影/">电影</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2015/01/05/django-model-field/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/03/movie150101/">浪客剑心：京都大火篇</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-		
-		<div id="toc" class="toc-article">
-			<h2 class="toc-title"><span>文章目录</span></h2>
-		
-			
-		
-		</div>
-		
-        <p>当前豆瓣评分： 7.8</p>
-<p><img src="http://7sbpgs.com1.z0.glb.clouddn.com/p2184443605.jpg" alt="浪客剑心：京都大火篇"></p>
-<p>新年第一片，看了浪客剑心的第二部，京都大火篇。<br>优点是还原度很高，对于浪客剑心这样的作品，还原度高就足够优秀了，剑心、齐藤、志志雄、操、宗次郎都比较出彩，左之助略显夸张了，薰中规中矩。动作设计延续了第一部的优秀，真实还原且完全没有违和感，不容易。<br>不足的部分是所有改编剧的硬伤————太赶剧情了，导致对人的内心刻画和精神层面的描绘不足，部分剧情的铺垫不够，比如仓紫有点莫名其妙，左之助的成长缺乏交代等等。<br>对看过原著的肯定是不错的选择拉，至少缺的那些都能脑补，场面和选角也都做的完美，即使是没看过原著的也值得推荐。<br>期待第三部，希望这个月能够放出。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-	  
-	  <a data-url="http://larryguo.com/2015/01/03/movie150101/" data-id="jsnnggal4axrm68x" data_title="浪客剑心：京都大火篇" data_summary="当前豆瓣评分： 7.8
-
-新年第一片，看了浪客剑心的第..." class="article-share-link">Share</a>
-      
-
-      
-        <a href="http://larryguo.com/2015/01/03/movie150101/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="/2015/01/03/movie150101/">暂无评论</a>
-      
-	  
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动作/">动作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/古装/">古装</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日本/">日本</a></li></ul>
-
-	  
-<span>
-更新日期:<time datetime="2015-01-04T00:53:13.000Z" itemprop="dateModified">1月 4 2015</time>
-</span>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- 多说评论框 start -->
-
-<!-- 多说评论框 end -->
-
-  
-    <article id="post-reading150103" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-<a href="/2015/01/03/reading150103/" class="article-date">
-  <time datetime="2015-01-02T16:30:43.000Z" itemprop="datePublished">1月 3 2015</time>
-</a>
-
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/阅读/">阅读</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          Django-Model:Field参考
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/03/reading150103/">枪炮、病菌与钢铁，人类社会的命运-reading</a>
-    </h1>
   
+    <a href="/2015/01/03/movie150101/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">浪客剑心：京都大火篇</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-		
-		<div id="toc" class="toc-article">
-			<h2 class="toc-title"><span>文章目录</span></h2>
-		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#随笔_-_Chapter_2"><span class="toc-number">1.</span> <span class="toc-text">随笔 . Chapter 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#农民的力量_-_Chapter_4"><span class="toc-number">2.</span> <span class="toc-text">农民的力量 . Chapter 4</span></a></li></ol>
-		
-		</div>
-		
-        <p>开始阅读:  2015.1.1<br>载体：     Kindle</p>
-<p><img src="http://7sbpgs.com1.z0.glb.clouddn.com/guns.jpg" alt="枪炮、病菌与钢铁"></p>
-<h3 id="随笔_-_Chapter_2">随笔 . Chapter 2</h3>
-<p>在波利尼西亚人这个来自自然的例子里，可以看到影响人类社会发展的因素是多样的，错综复杂的，叠加的。仅在波利尼西亚，我们就能够看到岛屿气候、地质类型、海洋资源、面积、地形的破碎程度等因素叠加的作用，使得处于同一起跑线的人们在短短一千年间就产生了巨大的差异。<br>这是一个有趣的观点：人类选择生存和发展的地域在开始看来是具有极大偶然性的——他们走到了某个地方，觉得这里可以生存，就定居下来。然而这个聚居地的地理、气候等因素，又必然性地决定了这个群体未来的命运——例如，能够从事集约型生产（气候合适，利于灌溉）的，能够承载密集人口的，资源丰富的区域，能够首先完成粮食的剩余、释放生产力用以专业化（领袖、士兵、宗教、手艺人、官员等），进一步优化资源配置。他们必然进一步形成了阶级，建立帝国的雏形——一切都是如此必然。</p>
-<p>看一个反面的例子，莫里奥里人：</p>
-<ul>
-<li>他们居住在亚南极地区，气候寒冷，祖先的热带作物无法生长，他们只能回到狩猎采集生活，无法贮藏农作物，所有人每天只能为填饱肚子奔波</li>
-<li>他们主要捕食的海鸟、鱼类等，不需要复杂的技术，导致技术无法发展</li>
-<li>他们居住的都是较小、偏远的岛屿，难以与外界沟通、贸易，也无法承载更多的人口，总人口维持在2000左右他们甚至采用阉割一些男婴来减少人口过剩的潜在冲突</li>
-<li>由于没有其他可以到达的岛屿，他们只能学会彼此和睦相处，宣布放弃战争，形成一个不好战的群体，技术武器简陋，没有强有力的领导和组织</li>
-</ul>
-<p>这样的群体，面对外来威胁的时候，后果是可想而知的。<br>要发展，第一件事是解放生产力，人类发展史无不如此。</p>
-<h3 id="农民的力量_-_Chapter_4">农民的力量 . Chapter 4</h3>
-<p>集约生产，相对于狩猎采集而言，对早期人类的影响是巨大的：</p>
-<ul>
-<li>野生动植物中只有一小部分能供人类食用，这样，饲养和种植使人们能够从每英亩土地获得百倍的卡路里，这为人口的发展提供了一个主要前提；</li>
-<li>解放人口增长的第二个制约：定居。这可以使得女性能够连续剩余，而狩猎为生的部落由于需要不停移动，在一个孩子不成为累赘前很难再次生育；</li>
-<li>驯化动物和种植植物的相互作用：动物粪便成为植物的肥料，动物可以帮助拉犁，帮助人们开拓更多地土地，动物的粪便是早期燃料的主要来源；</li>
-<li>定居使得食物可以贮藏，这样就能够养活非生产的专业人员，这些专业人员首先是国王和官员，通过税收和国家建制形成一整套粮食生产、贮藏、分配的体系。这种统一的行政体系和阶级极大地促进了科技和语言的发展。其次的专业人员包括用以征服的职业军人，为战争和社群提供宗教服务的神职人员，铸造刀剑枪炮的工艺者，能够保存信息的抄写员等；</li>
-<li>动植物提供了大量的天然纤维，用来制作服装、毯子、网、绳子以及其他工具、制品；</li>
-<li>大型哺乳动物成为主要的运输手段，以及马在战争中的统治性地位，这种地位知道一站中卡车和坦克诞生才被取代；</li>
-<li>驯养动物的过程中产生了针对人的专业化病菌，随之产生的时针对这些病菌的免疫力，当有免疫力的人面对没有免疫力的人时，病菌在征服的过程中也扮演了重要的角色。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-	  
-	  <a data-url="http://larryguo.com/2015/01/03/reading150103/" data-id="56fpjtux5tolc7rv" data_title="枪炮、病菌与钢铁，人类社会的命运-reading" data_summary="开始阅读:  2015.1.1载体：     Kind..." class="article-share-link">Share</a>
-      
-
-      
-        <a href="http://larryguo.com/2015/01/03/reading150103/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="/2015/01/03/reading150103/">暂无评论</a>
-      
-	  
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/人文/">人文</a></li></ul>
-
-	  
-<span>
-更新日期:<time datetime="2015-01-05T01:40:07.000Z" itemprop="dateModified">1月 5 2015</time>
-</span>
-
-
-    </footer>
-  </div>
   
 </article>
 
@@ -606,16 +280,62 @@
 
 <!-- 多说评论框 start -->
 
-<!-- 多说评论框 end -->
+<section id="comments">
+  <div class="ds-thread"  data-thread-key="/2015/01/04/django-model/" data-title="Django-Model概述（Learning Django 1）" data-url="http://larryguo.com/2015/01/04/django-model/" id="ds_thread">
+    <noscript>Please enable JavaScript to view the <a href="//duoshuo.com/?ref_noscript">comments powered by duoshuo.</a></noscript>
+  </div>
+</section>
 
-  
-  
+<!-- 多说评论框 end -->
 </section>
         
           
+  <div id="toc" class="toc-aside">
+  <h2 class="toc-title">文章目录</h2>
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Model-"><span class="toc-number">1.</span> <span class="toc-text">Model.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Using_models"><span class="toc-number">2.</span> <span class="toc-text">Using models</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fields"><span class="toc-number">3.</span> <span class="toc-text">Fields</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Field_Types"><span class="toc-number">3.1.</span> <span class="toc-text">Field Types</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Field_Options"><span class="toc-number">3.2.</span> <span class="toc-text">Field Options</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verbose_field_names"><span class="toc-number">3.3.</span> <span class="toc-text">Verbose field names</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Relationships"><span class="toc-number">3.4.</span> <span class="toc-text">Relationships</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Many-to-one_relationships"><span class="toc-number">3.4.1.</span> <span class="toc-text">Many-to-one relationships</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Many-to-many_relationships"><span class="toc-number">3.4.2.</span> <span class="toc-text">Many-to-many relationships</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extra_fields_on_many-to-many_relationships"><span class="toc-number">3.4.3.</span> <span class="toc-text">Extra fields on many-to-many relationships</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#One-to-one_relationships"><span class="toc-number">3.4.4.</span> <span class="toc-text">One-to-one relationships</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Models_across_files"><span class="toc-number">3.5.</span> <span class="toc-text">Models across files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Field_name_restrictions"><span class="toc-number">3.6.</span> <span class="toc-text">Field name restrictions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Custom_field_types"><span class="toc-number">3.7.</span> <span class="toc-text">Custom field types</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Meta_options"><span class="toc-number">4.</span> <span class="toc-text">Meta options</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Model_attributes"><span class="toc-number">5.</span> <span class="toc-text">Model attributes</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Model_methods"><span class="toc-number">6.</span> <span class="toc-text">Model methods</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overriding_predefined_model_methods"><span class="toc-number">6.1.</span> <span class="toc-text">Overriding predefined model methods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Executing_custom_SQL"><span class="toc-number">6.2.</span> <span class="toc-text">Executing custom SQL</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Model_inheritance"><span class="toc-number">7.</span> <span class="toc-text">Model inheritance</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Model_inheritance-1"><span class="toc-number">7.1.</span> <span class="toc-text">Model inheritance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-table_inheritance"><span class="toc-number">7.2.</span> <span class="toc-text">Multi-table inheritance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proxy_models"><span class="toc-number">7.3.</span> <span class="toc-text">Proxy models</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multiple_inheritance"><span class="toc-number">7.4.</span> <span class="toc-text">Multiple inheritance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Field_name_“hiding”_is_not_permitted"><span class="toc-number">7.5.</span> <span class="toc-text">Field name “hiding” is not permitted</span></a></li></ol></li></ol>
+    
+  </div>
+
 <aside id="sidebar">
 
   
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">ABOUT ME</h3>
+  <ul class="widget about-me">
+    
+    <li><img class="author" title="About me" src="/images/me.png" /></li>
+    
+    
+    <li>Hi, I'm Larry.</li>
+    
+  </ul>
+</div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Technology/">Technology</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Anaconda/" style="font-size: 13.00px; color: #7dc3de;">Anaconda</a><a href="/tags/Blog/" style="font-size: 20.00px; color: #800080;">Blog</a><a href="/tags/Django/" style="font-size: 16.50px; color: #7f62af;">Django</a><a href="/tags/Github/" style="font-size: 16.50px; color: #7f62af;">Github</a><a href="/tags/Hexo/" style="font-size: 16.50px; color: #7f62af;">Hexo</a><a href="/tags/Model/" style="font-size: 16.50px; color: #7f62af;">Model</a><a href="/tags/Python/" style="font-size: 16.50px; color: #7f62af;">Python</a><a href="/tags/Python3/" style="font-size: 16.50px; color: #7f62af;">Python3</a><a href="/tags/Sublime-Text/" style="font-size: 13.00px; color: #7dc3de;">Sublime Text</a><a href="/tags/UTF-8/" style="font-size: 13.00px; color: #7dc3de;">UTF-8</a><a href="/tags/markdown/" style="font-size: 13.00px; color: #7dc3de;">markdown</a><a href="/tags/unicode/" style="font-size: 13.00px; color: #7dc3de;">unicode</a><a href="/tags/人文/" style="font-size: 13.00px; color: #7dc3de;">人文</a><a href="/tags/动作/" style="font-size: 13.00px; color: #7dc3de;">动作</a><a href="/tags/古装/" style="font-size: 13.00px; color: #7dc3de;">古装</a><a href="/tags/日本/" style="font-size: 13.00px; color: #7dc3de;">日本</a><a href="/tags/编码/" style="font-size: 16.50px; color: #7f62af;">编码</a>
+    </div>
+  </div>
+
+
+  
+    
   <div class="widget-wrap">
     <h3 class="widget-title">archive</h3>
     <div class="widget">
@@ -624,6 +344,48 @@
   </div>
 
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/05/django-model-field/">Django-Model:Field参考</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/04/django-model/">Django-Model概述（Learning Django 1）</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/03/movie150101/">浪客剑心：京都大火篇</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/03/reading150103/">枪炮、病菌与钢铁，人类社会的命运-reading</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/11/Sublime-Text-3-For-Python-Development/">用Sublime Text打造你的Python IDE</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">最新评论</h3>
+  <ul class="widget ds-recent-comments" data-num-items="5" data-show-avatars="0" data-show-title="1" data-show-time="1"></ul>
+</div>
+<!-- 需要多说的公用代码 -->
+
+
+  
 
 </aside>
 
@@ -667,6 +429,8 @@
 
 <!-- 百度分享 start -->
 
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","douban","bdysc","sqq","qq","hi","baidu","huaban","youdao","sdo","mail","xg","diandian","fx","copy","print"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
 <!-- 百度分享 end -->
 
 <!--
@@ -692,6 +456,11 @@
 	<script src="/js/gotop.js"></script>
 	-->
 
+
+	<a class="icon-toc-toggle" href="javascript:void(0)" title="文章目录"></a>
+	<!--
+	<script src="/js/toc_aside_toggle.js"></script>
+	-->
 
 </div>
 <script src="/js/toc_aside_toggle.js" type="text/javascript"></script>
